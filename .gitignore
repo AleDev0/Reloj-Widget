@@ -1,2 +1,9 @@
+# Ignorar la carpeta dist/ con los ejecutables generados
 dist/
+
+# Ignorar la carpeta node_modules/ con las dependencias de npm
 node_modules/
+
+# Ignorar archivos temporales del sistema
+.DS_Store
+Thumbs.db
