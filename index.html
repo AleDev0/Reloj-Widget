@@ -15,14 +15,14 @@
             height: 100vh;
             background-color: transparent;
         }
-
+    
         .clock {
             font-size: 3rem;
             text-align: center;
             padding: 20px;
             transition: color 0.3s ease;
         }
-
+    
         .drag-area {
             position: absolute;
             top: 0;
@@ -32,34 +32,45 @@
             cursor: move;
             z-index: 1;
         }
-
-        .toggle-button {
+    
+        .button-container {
+            display: flex;
+            gap: 10px; /* Espacio entre botones */
             margin-top: 20px;
+        }
+    
+        .toggle-button {
             padding: 8px 16px;
             font-size: 0.9rem;
-            color: #666; /* Gris tenue */
+            color: #666;
             background-color: transparent;
-            border: 1px solid #666; /* Bordes suaves */
-            border-radius: 20px; /* Botón redondeado */
+            border: 1px solid #666;
+            border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
+    
         .toggle-button:hover {
-            color: black; /* Cambiar el color del texto al pasar el mouse */
-            border-color: black; /* Bordes más oscuros */
+            color: black;
+            border-color: black;
         }
-
+    
         .toggle-button:active {
             color: white;
-            background-color: black; /* Inversión sutil */
+            background-color: black;
         }
     </style>
+    
 </head>
 <body>
     <div class="drag-area"></div>
     <div class="clock" id="clock">Cargando...</div>
-    <button class="toggle-button" id="toggle-color-btn">Cambiar Color</button>
+    <div class="button-container">
+        <button class="toggle-button" id="toggle-text-color-btn">Cambiar Color del Texto</button>
+        <button class="toggle-button" id="toggle-bg-color-btn">Cambiar Color de Fondo</button>
+    </div>
     <script src="renderer.js"></script>
 </body>
+
+
 </html>

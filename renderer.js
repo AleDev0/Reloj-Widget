@@ -54,13 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Funcionalidad para cambiar el color del texto
-    const toggleColorBtn = document.getElementById('toggle-color-btn');
+    // Funcionalidad para cambiar el color del texto y fondo
+    const toggleTextColorBtn = document.getElementById('toggle-text-color-btn');
+    const toggleBgColorBtn = document.getElementById('toggle-bg-color-btn');
     const clock = document.getElementById('clock');
-    let isBlack = true;
+    let isBlackText = true;
+    let isBlackBackground = false;
 
-    toggleColorBtn.addEventListener('click', () => {
-        isBlack = !isBlack;
-        clock.style.color = isBlack ? 'black' : 'white';
+    toggleTextColorBtn.addEventListener('click', () => {
+        isBlackText = !isBlackText;
+        clock.style.color = isBlackText ? 'black' : 'white';
+    });
+
+    toggleBgColorBtn.addEventListener('click', () => {
+        isBlackBackground = !isBlackBackground;
+        body.style.backgroundColor = isBlackBackground ? 'black' : 'transparent';
+
+        // Cambiar automáticamente el color del texto para evitar conflictos
+        clock.style.color = isBlackBackground ? 'white' : 'black';
+        isBlackText = !isBlackBackground; // Sincronizar el estado de texto
     });
 });
